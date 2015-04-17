@@ -21,22 +21,6 @@ require.config({
 	}
 });
 
-require([
-	'app',
-	'kinvey'
-], function(
-	app,
-	Kinvey
-) {
-	Kinvey.init({
-		appKey: 'kid_bJHlCCBS0',
-		appSecret: 'e1fe40a2adfe40a39f720180409eb774'
-	}).then(function(activeUser) {
-		Kinvey.ping().then(function() {
-			console.log(arguments);
-			app.start();
-		});
-	}, function(error) {
-		console.log(error);
-	});
+require(['app'], function(app) {
+	app.start();
 });
